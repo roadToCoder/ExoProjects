@@ -72,7 +72,7 @@ function timerBreak() {
 function toggleTimer() {
   if (isPaused) {
     isPaused = false;
-    btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center"><img src="./ressources/pause.svg" width="35px" alt=""></div>';
+    btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center shadow-xl"><img src="./ressources/pause.svg" width="35px" alt=""></div>';
     timerWork();
   } else {
     clearTimeout(timeoutWork); // Annule le timeout de timerWork
@@ -82,7 +82,7 @@ function toggleTimer() {
     progressBreak.classList.add("hidden");
     displayBreak.classList.add("mt-1.5");
     isPaused = true;
-    btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center"><img src="./ressources/play.svg" width="35px" alt=""></div>';
+    btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center shadow-xl"><img src="./ressources/play.svg" width="35px" alt=""></div>';
   }
 }
 
@@ -99,7 +99,7 @@ btnReset.addEventListener("click", () => {
   count = 0;
   isPaused = true;
   
-  btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center"><img src="./ressources/play.svg" width="35px" alt=""></div>';
+  btnPlay.innerHTML = '<div id="btnPlay" class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center shadow-xl"><img src="./ressources/play.svg" width="35px" alt=""></div>';
   displayCount.innerHTML = `<span id="displayCount">&nbsp;${count}</span>`;
   displayWork.textContent = "30:00";
   displayBreak.textContent = "5:00";
