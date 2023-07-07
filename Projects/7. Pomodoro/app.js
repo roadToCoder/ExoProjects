@@ -40,7 +40,7 @@ function timerWork() {
     timeoutWork = setTimeout(timerWork, 1000); // Utilisez setTimeout ici
   }
 }
-
+ 
 function timerBreak() {
   if (secondesBreak === 0 && minutesBreak === 0 && secondesWork === 0 && minutesWork === 0) {
     clearInterval(intervalBreak);
