@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Couleurs fun JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="px-20 py-clamp(20px, 20vw, 200px) pb-0">
+    <div id="box-container" class="flex justify-center  items-center relative min-h-screen ">
+        <div id="box" class="text-lg min-w-[400px] min-h-[400px] absolute rounded-lg border-dotted border border-white">
+            <div class="flex flex-row">
+                <div class="basis-1/4 draggable-area min-h-[50px] pl-7 pt-2 ">                  
+                    <svg height="50px"  class="pointer-events-none select-none" version="1.1" viewBox="0 0 48 48" width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title/>
+                        <g fill="none" fill-rule="evenodd" id="arrow-move" stroke="none" stroke-width="1">
+                            <path d="M3.58077819,25.7275058 L3.54130289,25.800225 C3.39947856,26.1207263 3.63161808,26.5 4,26.5 L8.5,26.5 L8.5,32 C8.5,32.2761424 8.72385763,32.5 9,32.5 L12,32.5 L12.0898756,32.4919443 C12.3231248,32.4496084 12.5,32.2454599 12.5,32 L12.5,26.5 L17,26.5 C17.396719,26.5 17.635429,26.0601323 17.4192218,25.7275058 L10.9192218,15.7275058 C10.7220501,15.4241647 10.2779499,15.4241647 10.0807782,15.7275058 L3.58077819,25.7275058 Z M10.5,16.917 L16.078,25.5 L12,25.5 L11.9101244,25.5080557 C11.6768752,25.5503916 11.5,25.7545401 11.5,26 L11.5,31.5 L9.5,31.5 L9.5,26 L9.49194433,25.9101244 C9.44960837,25.6768752 9.24545989,25.5 9,25.5 L4.921,25.5 L10.5,16.917 Z" fill="#f4f4f5" fill-rule="nonzero" id="Path" transform="translate(10.500000, 24.000000) rotate(-90.000000) translate(-10.500000, -24.000000) "/>
+                            <path d="M30.5807782,25.7275058 L30.5413029,25.800225 C30.3994786,26.1207263 30.6316181,26.5 31,26.5 L35.5,26.5 L35.5,32 C35.5,32.2761424 35.7238576,32.5 36,32.5 L39,32.5 L39.0898756,32.4919443 C39.3231248,32.4496084 39.5,32.2454599 39.5,32 L39.5,26.5 L44,26.5 C44.396719,26.5 44.635429,26.0601323 44.4192218,25.7275058 L37.9192218,15.7275058 C37.7220501,15.4241647 37.2779499,15.4241647 37.0807782,15.7275058 L30.5807782,25.7275058 Z M37.5,16.917 L43.078,25.5 L39,25.5 L38.9101244,25.5080557 C38.6768752,25.5503916 38.5,25.7545401 38.5,26 L38.5,31.5 L36.5,31.5 L36.5,26 L36.4919443,25.9101244 C36.4496084,25.6768752 36.2454599,25.5 36,25.5 L31.921,25.5 L37.5,16.917 Z" fill="#f4f4f5" fill-rule="nonzero" id="Path" transform="translate(37.500000, 24.000000) scale(-1, 1) rotate(-90.000000) translate(-37.500000, -24.000000) "/>
+                            <path d="M17.0807782,39.2268571 L17.0413029,39.2995763 C16.8994786,39.6200776 17.1316181,39.9993513 17.5,39.9993513 L22,39.999 L22,45.4993513 C22,45.7754937 22.2238576,45.9993513 22.5,45.9993513 L25.5,45.9993513 L25.5898756,45.9912956 C25.8231248,45.9489597 26,45.7448112 26,45.4993513 L26,39.999 L30.5,39.9993513 C30.896719,39.9993513 31.135429,39.5594836 30.9192218,39.2268571 L24.4192218,29.2268571 C24.2220501,28.923516 23.7779499,28.923516 23.5807782,29.2268571 L17.0807782,39.2268571 Z M24,30.416 L29.578,38.999 L25.5,38.9993513 L25.4101244,39.007407 C25.1768752,39.0497429 25,39.2538914 25,39.4993513 L25,44.999 L23,44.999 L23,39.4993513 L22.9919443,39.4094757 C22.9496084,39.1762264 22.7454599,38.9993513 22.5,38.9993513 L18.421,38.999 L24,30.416 Z" fill="#f4f4f5" fill-rule="nonzero" id="Path" transform="translate(24.000000, 37.499351) scale(1, -1) translate(-24.000000, -37.499351) "/>
+                            <path d="M17.0807782,12.2268571 L17.0413029,12.2995763 C16.8994786,12.6200776 17.1316181,12.9993513 17.5,12.9993513 L22,12.999 L22,18.4993513 C22,18.7754937 22.2238576,18.9993513 22.5,18.9993513 L25.5,18.9993513 L25.5898756,18.9912956 C25.8231248,18.9489597 26,18.7448112 26,18.4993513 L26,12.999 L30.5,12.9993513 C30.896719,12.9993513 31.135429,12.5594836 30.9192218,12.2268571 L24.4192218,2.22685711 C24.2220501,1.92351601 23.7779499,1.92351601 23.5807782,2.22685711 L17.0807782,12.2268571 Z M24,3.416 L29.578,11.999 L25.5,11.9993513 L25.4101244,12.007407 C25.1768752,12.0497429 25,12.2538914 25,12.4993513 L25,17.999 L23,17.999 L23,12.4993513 L22.9919443,12.4094757 C22.9496084,12.1762264 22.7454599,11.9993513 22.5,11.9993513 L18.421,11.999 L24,3.416 Z" fill="#f4f4f5" fill-rule="nonzero" id="Path"/>
+                            <path d="M24,20 C21.790861,20 20,21.790861 20,24 C20,26.209139 21.790861,28 24,28 C26.209139,28 28,26.209139 28,24 C28,21.790861 26.209139,20 24,20 Z M24,21 C25.6568542,21 27,22.3431458 27,24 C27,25.6568542 25.6568542,27 24,27 C22.3431458,27 21,25.6568542 21,24 C21,22.3431458 22.3431458,21 24,21 Z" fill="#f4f4f5" fill-rule="nonzero" id="Oval"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="basis-3/4 min-h-[50px]"></div>
+            </div>
+            <div class="container">
+                <div class="input-group flex w-11/12 rounded-2xl outline outline-2 outline-white my-3 font-bold relative ml-4">
+                    <label for="color1" class="w-full h-full font-size-22 p-5 font-bold rounded-md border-none cursor-pointer">#D3182E</label>
+                    <input type="color" id="color1" class="absolute bg-transparent border-none cursor-pointer right-1">
+                </div>
+                <div class="input-group flex w-11/12 rounded-2xl outline outline-2 outline-white my-4 font-bold relative ml-4">
+                    <label for="color2" class="w-full h-full font-size-22 p-5 font-bold rounded-xl border-none cursor-pointer">#2D5DBD</label>
+                    <input type="color" id="color2" class="absolute bg-transparent border-none cursor-pointer right-1">
+                </div>
+                
+                <div class="range-group my-9 ml-4 mr-4">
+                    <label for="orientation" class="flex justify-between font-size-20 max-w-[180px] p-3 bg-[#f1f1f1] rounded-md font-medium">
+                        <span>Orientation:</span>
+                        <span class="orientation-value">300°</span>
+                    </label>
+                    <input type="range" id="orientation" min="0" max="360" value="300" class="inp-range mt-6 w-full">
+                </div>
+                <div class="buttons-container flex justify-center mb-4">
+                    <button class="copy-btn text-lg min-w-[150px] py-3 px-6 font-medium bg-slate-100 border-none outline-none cursor-pointer rounded-2xl  shadow-xl" type="button">
+                        <span>Copier</span>
+                    </button>
+                    <button class="random-btn text-lg min-w-[150px] py-3 px-6 font-medium bg-slate-100 border-none outline-none cursor-pointer rounded-2xl shadow-xl ml-6" type="button">
+                        <span>Random</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

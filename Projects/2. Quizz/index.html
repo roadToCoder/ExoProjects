@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <h1 class="text-center text-4xl pb-6"><span class="font-bold">Quizz</span> Culture générale. ☑️</h1>
+      <form class="formValid" action="">
+        <div class="question1 bg-stone-100 w-full max-w-3xl p-8 mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex mb-6">
+          <label class="text-2xl font-medium mb-3.5" for="question1">Qui est sacré empereur de France le 2 Décembre 1804 ?</label>
+          <div class="flex items-center">
+            <input type="radio" name="empereur" id="clovis" value="a" checked class="mr-2">
+            <label class="text-xl" for="clovis">Clovis</label> 
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="empereur" id="lincoln" value="b" class="mr-2">
+            <label class="text-xl" for="lincoln">Abraham Lincoln</label> 
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="empereur" id="napoleon" value="c" class="mr-2">
+            <label class="text-xl" for="napoleon">Napoleon Bonaparte</label> 
+          </div>
+        </div>
+
+        <div>
+          <div class="question2 bg-stone-100 w-full max-w-3xl p-8 mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex  mb-6">
+            <label class="text-2xl font-medium mb-3.5" for="question2">Quand la déclaration d'indépendance des Etats-Unis a-t'elle été votée ?</label>
+            <div class="flex items-center">
+              <input type="radio" name="vote" id="juillet76" value="a" checked class="mr-2">
+              <label class="text-xl" for="juillet76">4 Juillet 1976</label>
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="vote" id="avril56" value="b" class="mr-2">
+              <label class="text-xl" for="avril56">18 Avril 1856</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="vote" id="juin25" value="c" class="mr-2">
+              <label class="text-xl" for="juin25">30 Juin 1925</label> 
+            </div>
+          </div>       
+        </div>
+
+        <div>
+          <div class="question3 bg-stone-100 w-full max-w-3xl p-8 mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex mb-6">
+            <label class="text-2xl font-medium mb-3.5" for="question3">Quand a eu lieu la chute de l'empire romain d'occident ?</label>
+            <div class="flex items-center">
+              <input type="radio" name="chute" id="15apjc" value="a" checked class="mr-2">
+              <label class="text-xl" for="15apjc">15 ap. J.-C.</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="chute" id="476apjc" value="b" class="mr-2">
+              <label class="text-xl" for="476apjc">476 ap. J.-C.</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="chute" id="740avjc" value="c" class="mr-2">          
+              <label class="text-xl" for="740avjc">-740 av. J.-C.</label> 
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="question4 bg-stone-100 w-full max-w-3xl p-8 mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex mb-6">
+            <label class="text-2xl font-medium mb-3.5" for="question4">Quelle est la capitale de la Slovénie ?</label>
+            <div class="flex items-center">
+              <input type="radio" name="capitale" id="ljubljana" value="a" checked class="mr-2">
+              <label class="text-xl" for="ljubljana">Ljubljana</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="capitale" id="belgrade" value="b" class="mr-2">
+              <label class="text-xl" for="belgrade">Belgrade</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="capitale" id="bratislava" value="c" class="mr-2">
+              <label class="text-xl" for="bratislava">Bratislava</label>
+            </div>
+          </div>
+        </div>
+     
+        <div>
+          <div class="question5 bg-stone-100 w-full max-w-3xl p-8 mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex ">
+            <label class="text-2xl font-medium mb-3.5" for="question5">Combien d'habitants compte l'Irlande en 2020 ?</label>
+            <div class="flex items-center">
+              <input type="radio" name="habitants" id="1M" value="a" checked class="mr-2">
+              <label class="text-xl" for="1M">1,365 Million</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="habitants" id="21M" value="b" class="mr-2">
+              <label class="text-xl" for="21M">21 Millions</label> 
+            </div>
+            <div class="flex items-center">
+              <input type="radio" name="habitants" id="4M" value="c" class="mr-2">
+              <label class="text-xl" for="4M">4,9 Millions</label> 
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mb-6">
+          <input type="submit" class="envoiReponse mt-6 box-border shadow-lg rounded bg-white p-2 w-60 text-xl hover:bg-stone-100" value="VALIDER ✔️">
+        </div>
+
+
+      </form>
+
+      <div>
+        <div class="bg-white w-full max-w-3xl mx-auto space-y-2 rounded-md shadow-lg flex flex-col md:flex">
+          <p class="affichageMessage text-center text-xl m-5">Cliquez sur <span class="font-bold">valider</span> pour voir les <span class="font-bold">résultats.</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

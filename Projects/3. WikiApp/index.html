@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="min-w-[800px]">
+      <div class="text-center">
+        <!-- Votre contenu ici -->
+        <img src="./ressources/wiki-logo.png" class="w-52 inline mb-6" alt="wikipedia logo">
+        <div>
+           <h1 class="text-4xl mb-3">Recherche <span class="font-extrabold">Wikipedia</span></h1>
+        </div>
+        <div>
+          <form id="myForm" class="mb-12">
+           <input type="text" id="textInput" placeholder="Recherchez un terme" class="p-2 min-w-[600px] shadow-lg"/>
+          </form>
+          <p class="error-msg"></p>
+        </div>
+      </div>
+        <div class="tableauResultats mb-14 max-w-lg mx-auto text-left">
+
+        </div>
+      </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>

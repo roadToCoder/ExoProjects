@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies en JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="max-w-[800px] mx-auto">
+      <div class="text-center"><div>
+        <h1 class="text-5xl tracking-[1px] font-light mb-12">Création de <span class="font-semibold">Cookies</span> 🍪</h1>
+      </div>
+      <div>
+        <form id="myForm" class="mb-12">
+          <div class="flex flex-col ml-24 input-group">
+            
+            <label for="nameInput" name="name" class="text-left mb-2 font-bold">Son nom</label>
+            <input type="text" id="nameInput" name= "name" required class="p-2 max-w-[600px] shadow-lg mb-6 ml-rounded-sm"/>
+          </div>
+          <div class="flex flex-col ml-24">
+            <label for="valueInput" name="value" class="text-left mb-2 font-bold">Sa valeur</label>
+            <input type="text" id="valueInput" name = "value" required class="p-2 max-w-[600px] shadow-lg mb-10 rounded-sm"/>
+          </div>
+          <div class="flex space-x-4 justify-center">
+            <button type="submit" id="create" class="p-2 max-w-[600px] shadow-lg text-white bg-teal-700 rounded-lg pr-5 pl-5">Créer</button>
+            <button type="button" id="display" class="display-cookie-btn p-2 max-w-[600px] shadow-lg text-white bg-teal-700 rounded-lg pr-5 pl-5">Afficher</button>
+          </div>
+        </form>
+        <p class="info-txt text-lg mt-6 text-center"></p>
+        <ul class="cookies-list text-4xl m-2.5 p-2.5 grid grid-cols-3 gap-5">
+
+        </ul>
+      </div>
+    </div>
+    <div class="toast-container fixed bottom-5 right-5"></div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>

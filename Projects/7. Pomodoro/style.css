@@ -1,0 +1,45 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #70e1f5, #ffd194);
+  font-family: Lato, sans-serif;
+  padding: clamp(20px, 5vw, 50px) 10px;
+  color: #161616;
+}
+
+
+.progressBar {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+}
+.progressBar::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.8) 
+  );
+  animation: loading 1s ease-out infinite;
+  content: "";
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}
+

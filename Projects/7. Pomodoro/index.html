@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600;800&family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="font-light text-5xl text-center mb-12 mt-4">
+      Le
+      <span class="font-extrabold decoration-1 underline underline-offset-4"
+        >POMODORO</span
+      >
+    </h1>
+    <div>
+      <div class="flex items-center justify-center w-full pt-2.5">
+        <div class="bg-zinc-100 rounded-md border w-80 h-36 mr-2">
+          <h2 class="text-center text-4xl font-semibold mt-7">Travail</h2>
+          <div id="progressWork" class="bg-zinc-100 rounded mb-1 hidden">
+            <div class="h-0.5 rounded progressBar w-24 ml-28"></div>
+          </div>
+          <div
+            id="displayWork"
+            class="flex items-center justify-center text-3xl mt-1.5 text-center font-mono"
+          >
+            30:00
+          </div>
+        </div>
+        <div class="bg-zinc-100 rounded-md border w-80 h-36">
+          <h2 class="text-center text-4xl font-semibold mt-7">Repos</h2>
+          <div id="progressBreak" class="relative bg-zinc-100 rounded mt-1 hidden">
+            <div class="h-0.5 rounded progressBar w-24 ml-28"></div>
+          </div>
+          <div>
+            <div
+              id="displayBreak"
+              class="flex items-center justify-center text-3xl mt-1.5 text-center font-mono"
+            >
+              5:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center mt-10">
+      <div
+        id="btnPlay"
+        class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center mr-2"
+      >
+        <img src="./ressources/play.svg" width="35px" alt="" />
+      </div>
+      <div
+        id="btnReset"
+        class="cursor-pointer border bg-zinc-100 rounded-md w-16 h-16 flex items-center justify-center"
+      >
+        <img src="./ressources/reset.svg" width="35px" alt="" />
+      </div>
+    </div>
+    <div class="flex items-center text-3xl font-semibold justify-center mt-8">
+      Cycle(s) :<span id="displayCount">&nbsp;0</span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

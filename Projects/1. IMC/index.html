@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul IMC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-slate-100 w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow-lg">
+      <h1 class="text-center text-4xl pb-6">Calcul <span class="font-bold">d'IMC</span></h1>
+      <form action="" class="formulaire" method="GET">
+        <div class="flex flex-col md:flex-row md:justify-between">
+          <div class="flex flex-col w-full md:w-1/2">
+            <label for="descTaille" id="descTaille" name="descTaille" class="text-xs pl-2 mb-1">Votre taille en centimètres, Ex : 180</label>
+            <input type="number" name="taille" id="taille" placeholder="Votre taille en centimètres" class="text-sm p-2 block w-full md:w-60 rounded box-border shadow-lg">
+          </div>
+          <div class="flex flex-col w-full md:w-1/2">
+            <label for="descPoids" id="descPoids" name="descPoids" class="text-xs pl-2 mb-1 mt-6 md:mt-0">Votre poids en kg, Ex : 80</label>
+            <input type="number" name="poids" id="poids" placeholder="Votre poids en kg" class="text-sm block w-full md:w-60 p-2 rounded box-border shadow-lg">
+          </div>
+        </div>
+        <div class="flex justify-center pt-4">
+          <input type="submit" class="envoiCalcul mt-6 box-border shadow-lg rounded bg-amber-400 p-2 w-60 font-bold text-lg" value="Calculer un IMC">
+        </div>
+      </form>
+      <div>
+        <p class="attenteCalcul text-center text-4xl pt-4">0</p>
+      </div>
+      <div>
+        <p class="attenteCommentaire text-center text-xl font-light">En attente de résultat...</p>
+      </div>
+    </div> 
+    <script src="app(methode GET).js"></script>
+  </body>
+</html>
