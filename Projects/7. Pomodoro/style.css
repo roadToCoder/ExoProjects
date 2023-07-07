@@ -14,6 +14,9 @@ body {
   color: #161616;
 }
 
+#displayWork, #displayBreak {
+  font-family: Inconsolata,sans-serif;
+}
 
 .progressBar {
   position: relative;
