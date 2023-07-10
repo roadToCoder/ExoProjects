@@ -14,8 +14,83 @@
     />
   </head>
   <body>
-   
+    <div class="flex items-center justify-center w-full">
+      <div
+        class="bg-black rounded-md border w-[600px] min-h-full mr-2 shadow-xl"
+      >
+        <form action="POST" class="text-white">
+          <div>
+            <h1 class="text-center">Inscrivez-vous.</h1>
+          </div>
+          <div class="pl-6 pr-6">
+            <div class="flex flex-col relative">
+              <label for="userName">Nom d'utilisateur</label>
+              <div class="iconStateUserName relative">
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  autocomplete="off"
+                  placeholder="3 caractères minimum"
+                  class="text-black w-full"
+                />      
+                         
+              </div>
+              <div id="isValidUserName"></div>
+            </div>
+            <div class="flex flex-col relative">
+              <label for="mailUser" class="mt-6">Entrez votre email</label>
+              <div class="iconStateUserName relative">
+                <input
+                  type="email"
+                  name="mailUser"
+                  id="mailUser"
+                  autocomplete="off"
+                  placeholder="Votre email"
+                  class="text-black w-full"
+                />
+              </div>
+              <div id="isValidMail"></div>
+            </div>
+            <div class="flex flex-col relative">
+              <label for="newPassword" class="mt-6">Mot de passe</label>
+              <div class="iconStateUserName relative">
+                <input
+                  type="password"
+                  name="newPassword"
+                  id="newPassword"
+                  autocomplete="off"
+                  placeholder="Votre mot de passe"
+                  class="text-black w-full"
+                />
+              </div>
+              <h2 class="text-orange-100">
+                Au moins un symbole, un chiffre, ainsi que 6 caractères minimum.
+              </h2>
+              <div id="passwordAlert"></div>
+            </div>
+            <div class="flex flex-col">
+              <label for="confirmPassword" class="mt-6">Confirmez le mot de passe</label>
+              <div class="iconStateUserName relative">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  autocomplete="off"
+                  placeholder="Confirmez le mot de passe"
+                  class="text-black w-full"
+                />
 
+              </div>
+              <div id="confirmPasswordOK"></div>
+            </div>
+            <div class="flex justify-center m-8">
+              <button type="button" id="btnValidation" class="bg-amber-100 text-black">Création du compte</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
