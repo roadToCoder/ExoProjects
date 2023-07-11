@@ -15,77 +15,78 @@
   </head>
   <body>
     <div class="flex items-center justify-center w-full">
-      <div
-        class="bg-black rounded-md border w-[600px] min-h-full mr-2 shadow-xl"
-      >
+      <div class="bg-stone-900 rounded-md border w-[600px] min-h-full mr-2 shadow-xl">
         <form action="POST" class="text-white">
           <div>
-            <h1 class="text-center">Inscrivez-vous.</h1>
+            <h1 class="text-center m-7 text-3xl font-semibold">Inscrivez-vous.</h1>
           </div>
           <div class="pl-6 pr-6">
             <div class="flex flex-col relative">
-              <label for="userName">Nom d'utilisateur</label>
-              <div class="iconStateUserName relative">
+              <label for="userName" class="text-xl">Nom d'utilisateur</label>
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
                 <input
                   type="text"
                   name="userName"
                   id="userName"
                   autocomplete="off"
                   placeholder="3 caractères minimum"
-                  class="text-black w-full"
+                  class="text-white w-full bg-transparent outline-none placeholder-neutral-500 pb-2"
                 />      
                          
               </div>
               <div id="isValidUserName"></div>
             </div>
-            <div class="flex flex-col relative">
-              <label for="mailUser" class="mt-6">Entrez votre email</label>
-              <div class="iconStateUserName relative">
+            <div class="flex flex-col relative ">
+              <label for="mailUser" class="text-xl mt-6">Entrez votre email</label>
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
                 <input
                   type="email"
                   name="mailUser"
                   id="mailUser"
                   autocomplete="off"
                   placeholder="Votre email"
-                  class="text-black w-full"
+                  class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2"
                 />
               </div>
               <div id="isValidMail"></div>
             </div>
-            <div class="flex flex-col relative">
-              <label for="newPassword" class="mt-6">Mot de passe</label>
-              <div class="iconStateUserName relative">
+            <div class="flex flex-col relative" >
+              <label for="pwdNew" class="text-xl mt-6">Mot de passe</label>
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
                 <input
                   type="password"
-                  name="newPassword"
-                  id="newPassword"
+                  name="pwdNew"
+                  id="pwdNew"
                   autocomplete="off"
                   placeholder="Votre mot de passe"
-                  class="text-black w-full"
+                  class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2"
                 />
               </div>
-              <h2 class="text-orange-100">
+              <h2 class="text-gray-400 mt-1">
                 Au moins un symbole, un chiffre, ainsi que 6 caractères minimum.
               </h2>
-              <div id="passwordAlert"></div>
+              <div id="pwdAlert" class="mt-4">
+                <div class="flex items-center text-center justify-center w-[550px] ">         
+                </div>          
+              </div>
             </div>
-            <div class="flex flex-col">
-              <label for="confirmPassword" class="mt-6">Confirmez le mot de passe</label>
-              <div class="iconStateUserName relative">
+            <div class="flex flex-col relative">
+              <label for="pwdConfirm" class="text-xl mt-6">Confirmez le mot de passe</label>
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
                 <input
                   type="password"
-                  name="confirmPassword"
-                  id="confirmPassword"
+                  name="pwdConfirm"
+                  id="pwdConfirm"
                   autocomplete="off"
                   placeholder="Confirmez le mot de passe"
-                  class="text-black w-full"
+                  class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2 top"
                 />
 
               </div>
-              <div id="confirmPasswordOK"></div>
+              <div id="pwdConfirmOK"></div>
             </div>
             <div class="flex justify-center m-8">
-              <button type="button" id="btnValidation" class="bg-amber-100 text-black">Création du compte</button>
+              <button type="button" id="btnValidation" class="bg-amber-100 text-black text-xl font-semibold mt-1 p-3 pl-4 pr-4 rounded-sm">Création du compte</button>
             </div>
           </div>
         </form>
