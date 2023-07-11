@@ -10,3 +10,15 @@ body {
     font-family: Open sans, Helvetica, sans-serif;
     padding: clamp(20px, 5vw, 50px) 10px;
 }
+
+.container.shake {
+    animation: shake 0.4s;
+}
+@keyframes shake {
+    33% {
+        transform: translateX(-5px);
+    }
+    66%{
+        transform: translateX(5px);
+    }
+}
