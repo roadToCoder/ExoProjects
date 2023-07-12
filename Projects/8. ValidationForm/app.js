@@ -33,23 +33,66 @@ function mailValidation() {
   }
 }
 
+// Vérification du mot de passe
+
+const pwdInput = document.querySelector(".input-group:nth-child(3) input");
+
+pwdInput.addEventListener("blur", passwordValidation);
+pwdInput.addEventListener("input", passwordValidation);
+
+const passwordVerification = {
+  length: false,
+  symbol: false,
+  number: false
+}
+const regexList = {
+  symbol: /[^a-zA-Z0-9\s]/,
+  number: /\d/
+}
+
+let passwordValue;
+
+function passwordValidation() {
+  passwordValue = pwdInput.value;
+  let validationResult = 0;
+  for (const prop in passwordVerification) {
+    if (prop === "length") {
+      if (passwordValue.length < 6) {
+        passwordVerification.length = false;
+      }
+      else {
+        passwordVerification.length = true;
+        validationResult++;
+      }
+      continue;
+    }
+    if (regexList[prop].test(passwordValue)) {
+      passwordVerification[prop] = true;
+      validationResult++;
+    } else {
+      passwordVerification[prop] = false;
+    }     
+  }
+  if (validationResult !== 3) {
+    showValidation({index: 2, validation: false});
+  } else {
+    showValidation({index: 2, validation: true});
+  }
+}
 
 
 
-
-
-
-
+// Affichage validation si OK ou KO
 function showValidation(index, validation) {
   if (validation) {
     validationIcons[index].classList.remove("hidden");
     validationIcons[index].src = "ressources/check.svg";
-    validationTexts[index].classList.add("hidden");
+    if (validationTexts[index]) validationTexts[index].classList.add("hidden");
     
   } else {
-    validationIcons[index].classList.remove("hidden");
+    // validationIcons[index].classList.remove("hidden");
     validationIcons[index].src = "ressources/error.svg";
-    validationTexts[index].classList.remove("hidden");
+    if (validationTexts[index]) validationTexts[index].classList.remove("hidden");
   }
 }
 
