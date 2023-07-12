@@ -9,9 +9,10 @@ body {
     background: linear-gradient(to right, #d9a7c7, #fffcdc); 
     font-family: Open sans, Helvetica, sans-serif;
     padding: clamp(20px, 5vw, 50px) 10px;
+    overflow: hidden;
 }
 
-.container.shake {
+.shake {
     animation: shake 0.4s;
 }
 @keyframes shake {

@@ -14,31 +14,32 @@
     />
   </head>
   <body>
-    <div class="flex items-center justify-center w-full container">
+    <div class="flex items-center justify-center w-full contain">
       <div class="bg-stone-900 rounded-md border w-[600px] min-h-full shadow-xl">
         <form action="POST" class="text-white">
           <div>
             <h1 class="text-center m-7 text-3xl font-semibold">Inscrivez-vous.</h1>
           </div>
           <div class="pl-6 pr-6">
-            <div class="flex flex-col relative">
+            <div class="flex flex-col relative input-group">
               <label for="userName" class="text-xl">Nom d'utilisateur</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="text"
                   name="userName"
                   id="userName"
                   autocomplete="off"
                   placeholder="3 caractères minimum"
+                  maxlength="24"
                   class="text-white w-full bg-transparent outline-none placeholder-neutral-500 pb-2"
-                />      
-                         
+                />                               
               </div>
-              <div id="isValidUserName"></div>
+              <img src="ressources/check.svg" alt="OK" class="absolute h-8 w-8 right-0 top-[31px] hidden icon-verif">
+              <span class="error-msg text-red-500 hidden">Choisissez un pseudo contenant au moins 3 caractères.</span>
             </div>
-            <div class="flex flex-col relative ">
+            <div class="flex flex-col relative input-group">
               <label for="mailUser" class="text-xl mt-6">Entrez votre email</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="email"
                   name="mailUser"
@@ -48,11 +49,12 @@
                   class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2"
                 />
               </div>
-              <div id="isValidMail"></div>
+              <img src="ressources/check.svg" alt="OK" class="absolute h-8 w-8 right-0 top-[57px] -mt-0.5 hidden icon-verif">
+              <span class="error-msg text-red-500 hidden">Rentrez un email valide.</span>
             </div>
-            <div class="flex flex-col relative" >
+            <div class="flex flex-col relative input-group" >
               <label for="pwdNew" class="text-xl mt-6">Mot de passe</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="password"
                   name="pwdNew"
@@ -62,17 +64,19 @@
                   class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2"
                 />
               </div>
+              <img src="ressources/check.svg" alt="OK" class="absolute h-8 w-8 right-0 top-[57px] -mt-0.5 hidden icon-verif">
               <h2 class="text-gray-400 mt-1">
                 Au moins un symbole, un chiffre, ainsi que 6 caractères minimum.
               </h2>
-              <div id="pwdAlert" class="mt-4">
-                <div class="flex items-center text-center justify-center w-[550px] ">         
-                </div>          
+              <div  class="mt-4 lines hidden">
+                <div id="pwdFaible" class="w-40 text-center inline-block ml-3.5"><hr class="w-28 h-1 mx-auto mb-2 bg-orange-600 border-0 rounded ">faible</div>
+                <div id="pwdMoyen" class="w-40 text-center inline-block"><hr class="w-28 h-1 mx-auto mb-2 bg-yellow-200 border-0 rounded">moyen</div>
+                <div id="pwdFort" class="w-40 text-center inline-block"><hr class="w-28 h-1 mx-auto mb-2 bg-lime-400 border-0 rounded ">fort</div>          
               </div>
             </div>
-            <div class="flex flex-col relative">
+            <div class="flex flex-col relative input-group">
               <label for="pwdConfirm" class="text-xl mt-6">Confirmez le mot de passe</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100">
+              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="password"
                   name="pwdConfirm"
@@ -81,9 +85,8 @@
                   placeholder="Confirmez le mot de passe"
                   class="text-white w-full bg-transparent outline-none placeholder-stone-500 pb-2 top"
                 />
-
               </div>
-              <div id="pwdConfirmOK"></div>
+              <img src="ressources/check.svg" alt="OK" class="absolute h-8 w-8 right-0 top-[57px] -mt-0.5 hidden icon-verif">             
             </div>
             <div class="flex justify-center m-8">
               <button type="button" id="btnValidation" class="bg-amber-100 text-black text-xl font-semibold mt-1 p-3 pl-4 pr-4 rounded-sm hover:bg-amber-200">Création du compte</button>
