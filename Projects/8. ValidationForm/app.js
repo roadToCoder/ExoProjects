@@ -10,9 +10,9 @@ userInput.addEventListener("input", userValidation);
 
 function userValidation() {
   if ( userInput.value.length >= 3) {
-    showValidation({index: 0, validation: true});
+    showValidation(0, true);
   } else {
-    showValidation({index: 0, validation: false});
+    showValidation(0, false);
   }
 }
 
@@ -27,9 +27,9 @@ mailInput.addEventListener("input", mailValidation);
 function mailValidation() {
   const emailRegex = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_-]+\.[a-zA-Z]{2,3}$/;
   if (emailRegex.test(mailInput.value)) {
-    showValidation({index: 1, validation: true});
+    showValidation(1, true);
   } else {
-    showValidation({index: 1, validation: false});
+    showValidation(1, false);
   }
 }
 
@@ -55,6 +55,7 @@ let passwordValue;
 function passwordValidation() {
   passwordValue = pwdInput.value;
   let validationResult = 0;
+
   for (const prop in passwordVerification) {
     if (prop === "length") {
       if (passwordValue.length < 6) {
@@ -74,10 +75,42 @@ function passwordValidation() {
     }     
   }
   if (validationResult !== 3) {
-    showValidation({index: 2, validation: false});
+    showValidation(2, false);
   } else {
-    showValidation({index: 2, validation: true});
+    showValidation(2, true);
   }
+  passwordStrength();
+}
+
+const lines = document.querySelectorAll(".lines div");
+
+function passwordStrength() {
+  const passwordLength = pwdInput.value.length;
+
+  if (!passwordLength) {
+    addLines(0);
+  }
+  else if (passwordLength > 9 && passwordVerification.symbol && passwordVerification.number){
+    addLines(3)
+  }
+  else if (passwordLength > 6 && passwordVerification.symbol || passwordVerification.number){
+    addLines(2)
+  }
+  else {
+    addLines(1)
+  }
+}
+
+function addLines(numberOfLines) {
+  lines.forEach((element,index) => {
+    if (index < numberOfLines) {
+      element.classList.remove("hidden");
+      element.classList.add("inline-block");
+    } else {
+      element.classList.add("hidden");
+      element.classList.remove("inline-block");
+    }
+  })
 }
 
 
@@ -90,7 +123,7 @@ function showValidation(index, validation) {
     if (validationTexts[index]) validationTexts[index].classList.add("hidden");
     
   } else {
-    // validationIcons[index].classList.remove("hidden");
+    validationIcons[index].classList.remove("hidden");
     validationIcons[index].src = "ressources/error.svg";
     if (validationTexts[index]) validationTexts[index].classList.remove("hidden");
   }
