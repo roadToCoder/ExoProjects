@@ -14,16 +14,16 @@
     />
   </head>
   <body>
-    <div class="flex items-center justify-center w-full contain">
+    <div class="flex items-center justify-center w-full container">
       <div class="bg-stone-900 rounded-md border w-[600px] min-h-full shadow-xl">
-        <form action="POST" class="text-white">
+        <form class="text-white">
           <div>
             <h1 class="text-center m-7 text-3xl font-semibold">Inscrivez-vous.</h1>
           </div>
           <div class="pl-6 pr-6">
             <div class="flex flex-col relative input-group">
               <label for="userName" class="text-xl">Nom d'utilisateur</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
+              <div class="relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="text"
                   name="userName"
@@ -39,7 +39,7 @@
             </div>
             <div class="flex flex-col relative input-group">
               <label for="mailUser" class="text-xl mt-6">Entrez votre email</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
+              <div class="relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="email"
                   name="mailUser"
@@ -54,7 +54,7 @@
             </div>
             <div class="flex flex-col relative input-group" >
               <label for="pwdNew" class="text-xl mt-6">Mot de passe</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
+              <div class="relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="password"
                   name="pwdNew"
@@ -70,7 +70,7 @@
               </h2>
               <div  class="mt-4">
                 <div class="items-start w-[550px] lines">         
-                  <div id="l1" class="w-40 text-center hidden ml-8"><hr class="w-28 h-1 mx-auto mb-2 bg-orange-600 border-0 rounded ">faible</div>
+                  <div id="l1" class="w-40 text-center hidden ml-7"><hr class="w-28 h-1 mx-auto mb-2 bg-orange-600 border-0 rounded ">faible</div>
                   <div id="l2" class="w-40 text-center hidden"><hr class="w-28 h-1 mx-auto mb-2 bg-yellow-200 border-0 rounded">moyen</div>
                   <div id="l3" class="w-40 text-center hidden"><hr class="w-28 h-1 mx-auto mb-2 bg-lime-400 border-0 rounded ">fort</div>        
                 </div>   
@@ -78,7 +78,7 @@
             </div>
             <div class="flex flex-col relative input-group">
               <label for="pwdConfirm" class="text-xl mt-6">Confirmez le mot de passe</label>
-              <div class="iconStateUserName relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
+              <div class="relative border-b-2 mt-2 border-b-gray-400 focus-within:border-b-gray-100 mb-1">
                 <input
                   type="password"
                   name="pwdConfirm"
@@ -91,7 +91,7 @@
               <img src="ressources/check.svg" alt="OK" class="absolute h-8 w-8 right-0 top-[57px] -mt-0.5 hidden icon-verif">             
             </div>
             <div class="flex justify-center m-8">
-              <button type="button" id="btnValidation" class="bg-amber-100 text-black text-xl font-semibold mt-1 p-3 pl-4 pr-4 rounded-sm hover:bg-amber-200">Création du compte</button>
+              <button type="submit" id="btnValidation" class="bg-amber-100 text-black text-xl font-semibold mt-1 p-3 pl-4 pr-4 rounded-sm hover:bg-amber-200">Création du compte</button>
             </div>
           </div>
         </form>
