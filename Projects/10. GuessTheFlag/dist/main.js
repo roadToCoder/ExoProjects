@@ -42,7 +42,7 @@ startApplication();
 const getRandomCountry = (country) => {
     const number = getRandomNumbers(0, 250);
     const randomCountry = {
-        translations: country[number].translations.fra.official,
+        translations: country[number].translations.fra.common,
         flag: country[number].flags.png
     };
     displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
@@ -57,7 +57,7 @@ const getCountries = (dataCountries, goodAnswer) => {
 };
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country, goodAnswer) => {
-    const allAnswers = country.map((c) => c.translations.fra.official);
+    const allAnswers = country.map((c) => c.translations.fra.common);
     const allWrongAnswers = allAnswers.filter((answer) => answer !== goodAnswer);
     // Sélectionner 3 mauvaises réponses de manière aléatoire
     const selectedWrongAnswers = shuffleArray(allWrongAnswers).slice(0, 3);

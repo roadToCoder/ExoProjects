@@ -42,7 +42,7 @@ startApplication();
 interface CountryData {
   translations: {
     fra: {
-      official: string;
+      common: string;
     };
   };
   flags: {
@@ -55,7 +55,7 @@ interface CountryData {
 const getRandomCountry = (country:CountryData[]) => {
   const number = getRandomNumbers(0,250)
   const randomCountry = {
-    translations: country[number].translations.fra.official,
+    translations: country[number].translations.fra.common,
     flag: country[number].flags.png
   }
   displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
@@ -75,7 +75,7 @@ const getCountries = (dataCountries:any[], goodAnswer:string) => {
 
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country: CountryData[], goodAnswer: string) => {
-  const allAnswers = country.map((c) => c.translations.fra.official);
+  const allAnswers = country.map((c) => c.translations.fra.common);
   const allWrongAnswers = allAnswers.filter((answer) => answer !== goodAnswer);
   
   
