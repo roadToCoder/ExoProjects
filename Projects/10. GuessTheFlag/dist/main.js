@@ -27,15 +27,17 @@ function getCountries() {
             const dataCountries = yield response.json();
             getRandomCountry(dataCountries);
             getRandomAnswers(dataCountries, goodAnswer);
+            // Envoie la valeur du bouton et la bonne réponse 
             displayButtons.addEventListener("click", (event) => {
                 const clickedButton = event.target;
                 const buttonValue = clickedButton.value;
                 getResult(goodAnswer, buttonValue);
             });
+            // Reset les infos affichées et affiche un nouveau pays
             displayChangeCountry.addEventListener("click", () => {
-                displayFlag.innerHTML = ""; // Vider la div displayFlag
-                displayButtons.innerHTML = ""; // Vider la div displayButtons
-                displayResult.innerHTML = ""; // Vider la div displayResult
+                displayFlag.innerHTML = "";
+                displayButtons.innerHTML = "";
+                displayResult.innerHTML = "";
                 getRandomCountry(dataCountries);
                 getRandomAnswers(dataCountries, goodAnswer);
             });
@@ -85,6 +87,7 @@ const getResult = (goodAnswer, buttonValue) => {
         newCountry();
     }
 };
+// Afficher le bouton nouveau pays
 const newCountry = () => {
     displayChangeCountry.innerHTML = `<button class="pointer-events-auto font-semibold mt-6 ml-4 p-2 bg-amber-300 hover:bg-amber-200 text-black y-2 px-4 border-b-4 border-amber-400 hover:border-amber-300 rounded">Changer de pays</button>`;
 };
