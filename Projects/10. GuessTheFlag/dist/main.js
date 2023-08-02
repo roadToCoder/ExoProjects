@@ -27,20 +27,8 @@ function getCountries() {
             const dataCountries = yield response.json();
             getRandomCountry(dataCountries);
             getRandomAnswers(dataCountries, goodAnswer);
-            // Envoie la valeur du bouton et la bonne réponse 
-            displayButtons.addEventListener("click", (event) => {
-                const clickedButton = event.target;
-                const buttonValue = clickedButton.value;
-                getResult(goodAnswer, buttonValue);
-            });
-            // Reset les infos affichées et affiche un nouveau pays
-            displayChangeCountry.addEventListener("click", () => {
-                displayFlag.innerHTML = "";
-                displayButtons.innerHTML = "";
-                displayResult.innerHTML = "";
-                getRandomCountry(dataCountries);
-                getRandomAnswers(dataCountries, goodAnswer);
-            });
+            getValueButton();
+            displaysInfos(dataCountries);
         }
         // Gestion des erreurs
         catch (error) {
@@ -64,6 +52,7 @@ const getRandomCountry = (country) => {
     displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
     return goodAnswer = randomCountry.name;
 };
+// Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country, goodAnswer) => {
     const allAnswers = country.map((c) => c.translations.fra.official);
     const allWrongAnswers = allAnswers.filter((answer) => answer !== goodAnswer);
@@ -76,19 +65,37 @@ const getRandomAnswers = (country, goodAnswer) => {
     }
     return allAnswersDisplayed = answersToDisplay;
 };
+// Envoie la valeur du bouton et la bonne réponse 
+const getValueButton = () => {
+    displayButtons.addEventListener("click", (event) => {
+        const clickedButton = event.target;
+        const buttonValue = clickedButton.value;
+        getResult(goodAnswer, buttonValue);
+    });
+};
 // Test et affichage de la réponse
 const getResult = (goodAnswer, buttonValue) => {
     if (buttonValue === goodAnswer) {
         displayResult.innerHTML = `<div class="rounded bg-green-400 mt-6 ml-4 p-3 w-10/12 font-semibold">${buttonValue} est la bonne réponse</div>`;
-        newCountry();
+        newCountryBtn();
     }
     else {
         displayResult.innerHTML = `<div class="rounded bg-red-400 mt-6 ml-4 p-3 w-10/12 font-semibold">${buttonValue} n'est pas la bonne réponse</div>`;
-        newCountry();
+        newCountryBtn();
     }
 };
+// Reset les infos affichées et affiche un nouveau pays
+const displaysInfos = (dataCountries) => {
+    displayChangeCountry.addEventListener("click", () => {
+        displayFlag.innerHTML = "";
+        displayButtons.innerHTML = "";
+        displayResult.innerHTML = "";
+        getRandomCountry(dataCountries);
+        getRandomAnswers(dataCountries, goodAnswer);
+    });
+};
 // Afficher le bouton nouveau pays
-const newCountry = () => {
+const newCountryBtn = () => {
     displayChangeCountry.innerHTML = `<button class="pointer-events-auto font-semibold mt-6 ml-4 p-2 bg-amber-300 hover:bg-amber-200 text-black y-2 px-4 border-b-4 border-amber-400 hover:border-amber-300 rounded">Changer de pays</button>`;
 };
 // Mélanger un tableau (algorithme de Fisher-Yates)

@@ -20,23 +20,13 @@ async function getCountries() {
     const dataCountries = await response.json();
 
     getRandomCountry(dataCountries);
+
     getRandomAnswers(dataCountries,goodAnswer);
     
-    // Envoie la valeur du bouton et la bonne réponse 
-    displayButtons.addEventListener("click", (event) => {
-      const clickedButton = event.target as HTMLButtonElement;
-      const buttonValue = clickedButton.value;
-      getResult(goodAnswer,buttonValue)      
-    });
+    getValueButton();
+    
+    displaysInfos(dataCountries);
 
-    // Reset les infos affichées et affiche un nouveau pays
-    displayChangeCountry.addEventListener("click", () => {
-      displayFlag.innerHTML = ""; 
-      displayButtons.innerHTML = "";
-      displayResult.innerHTML = "";
-      getRandomCountry(dataCountries);
-      getRandomAnswers(dataCountries, goodAnswer);
-    });
   } 
   
   // Gestion des erreurs
@@ -64,6 +54,7 @@ interface CountryData {
   };
 }
 
+
 // Sélectionne le drapeau et le nom d'un pays au hasard
 const getRandomCountry = (country:CountryData[]) => {
   const number = getRandomNumbers(0,250)
@@ -76,13 +67,15 @@ const getRandomCountry = (country:CountryData[]) => {
   return goodAnswer = randomCountry.name;
 }
 
+
+// Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country: CountryData[], goodAnswer: string) => {
   const allAnswers = country.map((c) => c.translations.fra.official);
   const allWrongAnswers = allAnswers.filter((answer) => answer !== goodAnswer);
 
+
   // Sélectionner 3 mauvaises réponses de manière aléatoire
   const selectedWrongAnswers = shuffleArray(allWrongAnswers).slice(0, 3);
-  
   
 
   // Fusionner les réponses (3 mauvaises + 1 bonne) et mélanger
@@ -94,22 +87,47 @@ const getRandomAnswers = (country: CountryData[], goodAnswer: string) => {
   return allAnswersDisplayed = answersToDisplay;
 };
 
+
+// Envoie la valeur du bouton et la bonne réponse 
+const getValueButton = () => {
+  displayButtons.addEventListener("click", (event) => {
+    const clickedButton = event.target as HTMLButtonElement;
+    const buttonValue = clickedButton.value;
+    getResult(goodAnswer,buttonValue)      
+  });
+};
+
+
 // Test et affichage de la réponse
 const getResult = (goodAnswer:string, buttonValue:string) => {
   if (buttonValue === goodAnswer) {
     displayResult.innerHTML = `<div class="rounded bg-green-400 mt-6 ml-4 p-3 w-10/12 font-semibold">${buttonValue} est la bonne réponse</div>`
-    newCountry()
+    newCountryBtn()
   }
   else {
     displayResult.innerHTML = `<div class="rounded bg-red-400 mt-6 ml-4 p-3 w-10/12 font-semibold">${buttonValue} n'est pas la bonne réponse</div>`
-    newCountry()
+    newCountryBtn()
   }
 };
 
+
+// Reset les infos affichées et affiche un nouveau pays
+const displaysInfos = (dataCountries:any[]) => {
+  displayChangeCountry.addEventListener("click", () => {
+    displayFlag.innerHTML = ""; 
+    displayButtons.innerHTML = "";
+    displayResult.innerHTML = "";
+    getRandomCountry(dataCountries);
+    getRandomAnswers(dataCountries, goodAnswer);
+  });
+};
+
+
 // Afficher le bouton nouveau pays
-const newCountry = () => {
+const newCountryBtn = () => {
   displayChangeCountry.innerHTML = `<button class="pointer-events-auto font-semibold mt-6 ml-4 p-2 bg-amber-300 hover:bg-amber-200 text-black y-2 px-4 border-b-4 border-amber-400 hover:border-amber-300 rounded">Changer de pays</button>`;
 }
+
 
 // Mélanger un tableau (algorithme de Fisher-Yates)
 const shuffleArray = <T>(array: T[]): T[] => {
