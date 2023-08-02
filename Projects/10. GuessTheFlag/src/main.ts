@@ -51,6 +51,15 @@ interface CountryData {
 }
 
 
+// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
+// et reset les infos affichées
+const getCountries = (dataCountries:any[], goodAnswer:string) => {
+  getRandomAnswers(dataCountries,goodAnswer);
+  getValueButton();
+  resetInfos(dataCountries);
+};
+
+
 // Sélectionne le drapeau et le nom d'un pays au hasard
 const getRandomCountry = (country:CountryData[]) => {
   const number = getRandomNumbers(0,250)
@@ -62,15 +71,6 @@ const getRandomCountry = (country:CountryData[]) => {
   
   return goodAnswer = randomCountry.translations;
 }
-
-
-// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
-// et reset les infos affichées
-const getCountries = (dataCountries:any[], goodAnswer:string) => {
-  getRandomAnswers(dataCountries,goodAnswer);
-  getValueButton();
-  resetInfos(dataCountries);
-};
 
 
 // Obtenir de mauvaises réponses et récupérer la bonne

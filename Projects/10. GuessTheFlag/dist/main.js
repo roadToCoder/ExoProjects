@@ -38,6 +38,13 @@ const startApplication = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 startApplication();
+// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
+// et reset les infos affichées
+const getCountries = (dataCountries, goodAnswer) => {
+    getRandomAnswers(dataCountries, goodAnswer);
+    getValueButton();
+    resetInfos(dataCountries);
+};
 // Sélectionne le drapeau et le nom d'un pays au hasard
 const getRandomCountry = (country) => {
     const number = getRandomNumbers(0, 250);
@@ -47,13 +54,6 @@ const getRandomCountry = (country) => {
     };
     displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
     return goodAnswer = randomCountry.translations;
-};
-// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
-// et reset les infos affichées
-const getCountries = (dataCountries, goodAnswer) => {
-    getRandomAnswers(dataCountries, goodAnswer);
-    getValueButton();
-    resetInfos(dataCountries);
 };
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country, goodAnswer) => {
