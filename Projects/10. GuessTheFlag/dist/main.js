@@ -17,31 +17,27 @@ const btn = document.querySelector("button");
 let goodAnswer = "";
 let allAnswersDisplayed = [];
 // Appelle l'API RestCountries
-function getCountries() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch('https://restcountries.com/v3.1/all');
-            if (!response.ok) {
-                throw new Error(`Error ${response.status}, ${response.statusText}`);
-            }
-            const dataCountries = yield response.json();
-            getRandomCountry(dataCountries);
-            getRandomAnswers(dataCountries, goodAnswer);
-            getValueButton();
-            displaysInfos(dataCountries);
+const startApplication = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch('https://restcountries.com/v3.1/all');
+        if (!response.ok) {
+            throw new Error(`Error ${response.status}, ${response.statusText}`);
         }
-        // Gestion des erreurs
-        catch (error) {
-            if (error instanceof Error) {
-                errorInformation.textContent = error.message;
-            }
-            else {
-                errorInformation.innerHTML = `Erreur inattendue : ${error}`;
-            }
+        const dataCountries = yield response.json();
+        getRandomCountry(dataCountries);
+        getCountries(dataCountries, goodAnswer);
+    }
+    // Gestion des erreurs
+    catch (error) {
+        if (error instanceof Error) {
+            errorInformation.textContent = error.message;
         }
-    });
-}
-getCountries();
+        else {
+            errorInformation.innerHTML = `Erreur inattendue : ${error}`;
+        }
+    }
+});
+startApplication();
 // Sélectionne le drapeau et le nom d'un pays au hasard
 const getRandomCountry = (country) => {
     const number = getRandomNumbers(0, 250);
@@ -51,6 +47,13 @@ const getRandomCountry = (country) => {
     };
     displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
     return goodAnswer = randomCountry.translations;
+};
+// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
+// et reset les infos affichées
+const getCountries = (dataCountries, goodAnswer) => {
+    getRandomAnswers(dataCountries, goodAnswer);
+    getValueButton();
+    resetInfos(dataCountries);
 };
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country, goodAnswer) => {
@@ -85,7 +88,7 @@ const getResult = (goodAnswer, buttonValue) => {
     }
 };
 // Reset les infos affichées et affiche un nouveau pays
-const displaysInfos = (dataCountries) => {
+const resetInfos = (dataCountries) => {
     displayChangeCountry.addEventListener("click", () => {
         displayFlag.innerHTML = "";
         displayButtons.innerHTML = "";

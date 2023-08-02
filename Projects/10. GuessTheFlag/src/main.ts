@@ -9,7 +9,7 @@ let goodAnswer = "";
 let allAnswersDisplayed:any[] = [];
 
 // Appelle l'API RestCountries
-async function getCountries() {
+const startApplication = async () => {
   try {
     const response = await fetch('https://restcountries.com/v3.1/all');
 
@@ -18,14 +18,9 @@ async function getCountries() {
     }
 
     const dataCountries = await response.json();
-
+    
     getRandomCountry(dataCountries);
-
-    getRandomAnswers(dataCountries,goodAnswer);
-    
-    getValueButton();
-    
-    displaysInfos(dataCountries);
+    getCountries(dataCountries,goodAnswer)
 
   } 
   
@@ -38,9 +33,9 @@ async function getCountries() {
       errorInformation.innerHTML = `Erreur inattendue : ${error}`;
     }
   }
-}
+};
 
-getCountries();
+startApplication();
 
 
 // Inteface contenant les informations que l'on souhaite récupérer 
@@ -64,17 +59,26 @@ const getRandomCountry = (country:CountryData[]) => {
     flag: country[number].flags.png
   }
   displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
-
+  
   return goodAnswer = randomCountry.translations;
 }
+
+
+// Fonction qui appelle la sélection de mauvaise réponses, envoie les infos du bouton
+// et reset les infos affichées
+const getCountries = (dataCountries:any[], goodAnswer:string) => {
+  getRandomAnswers(dataCountries,goodAnswer);
+  getValueButton();
+  resetInfos(dataCountries);
+};
 
 
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country: CountryData[], goodAnswer: string) => {
   const allAnswers = country.map((c) => c.translations.fra.official);
   const allWrongAnswers = allAnswers.filter((answer) => answer !== goodAnswer);
-
-
+  
+  
   // Sélectionner 3 mauvaises réponses de manière aléatoire
   const selectedWrongAnswers = shuffleArray(allWrongAnswers).slice(0, 3);
   
@@ -113,7 +117,7 @@ const getResult = (goodAnswer:string, buttonValue:string) => {
 
 
 // Reset les infos affichées et affiche un nouveau pays
-const displaysInfos = (dataCountries:any[]) => {
+const resetInfos = (dataCountries:any[]) => {
   displayChangeCountry.addEventListener("click", () => {
     displayFlag.innerHTML = ""; 
     displayButtons.innerHTML = "";
