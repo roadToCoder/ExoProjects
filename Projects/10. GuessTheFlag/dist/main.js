@@ -46,11 +46,11 @@ getCountries();
 const getRandomCountry = (country) => {
     const number = getRandomNumbers(0, 250);
     const randomCountry = {
-        name: country[number].translations.fra.official,
+        translations: country[number].translations.fra.official,
         flag: country[number].flags.png
     };
     displayFlag.innerHTML = `<img src="${randomCountry.flag}" class="ml-4"></img>`;
-    return goodAnswer = randomCountry.name;
+    return goodAnswer = randomCountry.translations;
 };
 // Obtenir de mauvaises réponses et récupérer la bonne
 const getRandomAnswers = (country, goodAnswer) => {
