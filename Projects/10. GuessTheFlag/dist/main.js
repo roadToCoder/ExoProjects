@@ -36,7 +36,7 @@ function getCountries() {
                 errorInformation.textContent = error.message;
             }
             else {
-                errorInformation.innerHTML = `Unexpected error : ${error}`;
+                errorInformation.innerHTML = `Erreur inattendue : ${error}`;
             }
         }
     });
