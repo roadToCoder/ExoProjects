@@ -1,3 +1,5 @@
 Projets\ terminés/
 node_modules/
 src/
+*.env
+*.json
